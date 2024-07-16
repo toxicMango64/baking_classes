@@ -138,10 +138,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Project based
-
-server
-client
-test.txt
-
 # End of
