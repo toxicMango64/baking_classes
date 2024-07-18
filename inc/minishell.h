@@ -1,8 +1,12 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# define MAX_INPUT
+# define MAX_INPUT 262144
 
+# define HOME "HOME"
+# define PATH "PATH"
+# define MAX_INPUT 262144
+# define MAX_INPUT 262144
 
 # include <unistd.h>
 # include <ctype.h>

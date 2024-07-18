@@ -12,7 +12,7 @@
 int	main(int ac, char **av)
 {
 	char		*user_input;
-	char		*command;
+	// char		*command;
 
 	if (1 < ac)
 		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); // minishell does not take args
@@ -26,15 +26,20 @@ int	main(int ac, char **av)
 			add_history(user_input);
 		printf ("{%s}\n", user_input);
 
-		command = parse(user_input);
-		printf ("{%s}\n", command);
+		// command = parse(user_input);
+		// printf ("{%s}\n", command);
 
-		// exec(command);
+		// char *argv[] = {"ls", "-l", "-a", NULL}; // arguments for the new program
+		// char *envp[] = {"PATH=/bin:/usr/bin", "HOME=/home/user", NULL}; // environment variables
+		// if (execve("/bin/bash", argv, envp) == -1)
+		// 	(free (user_input), perror("execve"), exit(EXIT_FAILURE));
+
 		free (user_input);
 	}
 
 	return (0);
 }
+
 /**
  * example for env:
  * 
