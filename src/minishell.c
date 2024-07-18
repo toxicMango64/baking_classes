@@ -12,7 +12,7 @@
 int	main(int ac, char **av)
 {
 	char		*user_input;
-	// char		*command;
+	char		*command;
 
 	if (1 < ac)
 		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); // minishell does not take args
@@ -24,9 +24,12 @@ int	main(int ac, char **av)
 			return (perror("user input error"), 126);
 		if (*user_input)
 			add_history(user_input);
-		// command = parse(user_input);
 		printf ("{%s}\n", user_input);
 
+		command = parse(user_input);
+		printf ("{%s}\n", command);
+
+		// exec(command);
 		free (user_input);
 	}
 
