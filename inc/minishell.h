@@ -1,6 +1,9 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+# define MAX_INPUT
+
+
 # include <unistd.h>
 # include <ctype.h>
 # include <readline/readline.h>
