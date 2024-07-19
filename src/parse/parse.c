@@ -2,9 +2,9 @@
 
 char	*trimcleanstring(char *str)
 {
-	char	*start;
-	char	*end;
-	char	*output;
+	char *start;
+	char *end;
+	char *output;
 
 	start = str;
 	end = str;
@@ -31,7 +31,6 @@ char	*trimcleanstring(char *str)
 	return (str);
 }
 
-// char	**parse(char *user_input)
 char	*parse(char *user_input)
 {
 	char	*clean_input;
@@ -43,3 +42,34 @@ char	*parse(char *user_input)
 	return (clean_input);
 	// return (command);
 }
+
+// char *trimcleanstring(char *str)
+// {
+// 	char *start;
+// 	char *end;
+// 	char *output;
+
+// 	start = str;
+// 	end = str;
+// 	output = str;
+// 	while (ft_isspace((unsigned char)*start))
+// 		start++;
+// 	if (*start == '\0')
+// 		return output;
+// 	while (*end != '\0')
+// 	{
+// 		if (ft_isspace((unsigned char)*end))
+// 		{
+// 			end++;
+// 			if (!ft_isspace((unsigned char)*end) && *end != '\0')
+// 				*output++ = ' ';
+// 		}
+// 		else
+// 			*output++ = *end++;
+// 	}
+// 	if (output > str && ft_isspace((unsigned char)*(output - 1)))
+// 		*(output - 1) = '\0';
+// 	else
+// 		*output = '\0';
+// 	return str;
+// }

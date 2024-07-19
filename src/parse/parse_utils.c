@@ -1,10 +1,7 @@
 #include "../../inc/parse.h"
 
-int	ft_isspace(char ch)
+int	ft_isspace(int c)
 {
-	if ("\t" == ch || "\n" == ch || "\v" == ch || "\f" == ch || "\r" == ch
-		|| " " == ch)
-	return (ch);
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r');
 }
-/* 
-*/
