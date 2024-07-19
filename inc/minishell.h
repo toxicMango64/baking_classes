@@ -12,7 +12,7 @@
 # include <ctype.h>
 # include <readline/readline.h>
 # include <readline/history.h>
-
+# include "../libft/libft.h"
 /* --------------------------------- minishell ------------------------------ */
 
 #include <stdio.h>
