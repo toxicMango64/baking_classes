@@ -3,37 +3,26 @@
 
 # define MAX_INPUT 262144
 
-# define HOME "HOME"
-# define PATH "PATH"
-# define MAX_INPUT 262144
-# define MAX_INPUT 262144
-
+# include "parse.h"
 # include <unistd.h>
+# include <stdio.h>
 # include <ctype.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 
 /* --------------------------------- minishell ------------------------------ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <signal.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <errno.h>
+# include <stdlib.h>
+# include <string.h>
+# include <sys/types.h>
+# include <signal.h>
+# include <sys/wait.h>
+# include <fcntl.h>
+# include <errno.h>
 
 /* --------------------------------- minishell ------------------------------ */
 
 /* --------------------------------- parser --------------------------------- */
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-
 /* --------------------------------- parser --------------------------------- */
 
 #endif
