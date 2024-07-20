@@ -2,6 +2,7 @@
 # define MINISHELL_H
 
 # define MAX_INPUT 262144
+# define MAX 2048
 
 # include "parse.h"
 # include <unistd.h>
