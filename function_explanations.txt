@@ -1,0 +1,272 @@
+Readline Library Functions
+
+readline
+
+Description: Reads a line of input from the user, with support for line editing and history.
+Usage: Provides a user interface for reading input, similar to how modern shells work.
+Prototype: char *readline(const char *prompt);
+
+rl_clear_history
+
+Description: Clears the command history list.
+Usage: Useful for freeing up memory by removing all stored commands.
+Prototype: void rl_clear_history(void);
+
+rl_on_new_line
+
+Description: Prepares the Readline library to read a new line.
+Usage: Ensures the internal state is correctly updated before reading a new line.
+Prototype: void rl_on_new_line(void);
+
+rl_replace_line
+
+Description: Replaces the current line in the Readline buffer with a new line.
+Usage: Used for implementing features like command completion or correction.
+Prototype: void rl_replace_line(const char *text, int clear_undo);
+
+rl_redisplay
+
+Description: Refreshes and redisplays the current line in the Readline buffer.
+Usage: Ensures that any changes to the input line are shown to the user.
+Prototype: void rl_redisplay(void);
+
+add_history
+
+Description: Adds a new entry to the command history list.
+Usage: Stores the command for later recall using the history features.
+Prototype: void add_history(const char *line);
+
+Standard I/O and Memory Functions
+
+printf
+
+Description: Prints formatted output to the standard output.
+Usage: Useful for displaying messages to the user.
+Prototype: int printf(const char *format, ...);
+
+malloc
+
+Description: Allocates a block of memory on the heap.
+Usage: Dynamically allocates memory for data structures.
+Prototype: void *malloc(size_t size);
+
+free
+
+Description: Frees a block of memory previously allocated by malloc.
+Usage: Prevents memory leaks by deallocating memory no longer in use.
+Prototype: void free(void *ptr);
+
+write
+
+Description: Writes data to a file descriptor.
+Usage: Writes data to files, pipes, or standard output.
+Prototype: ssize_t write(int fd, const void *buf, size_t count);
+
+File Handling and Process Control Functions
+
+access
+
+Description: Checks a file's accessibility.
+Usage: Verifies if a file exists and the user has specified permissions.
+Prototype: int access(const char *pathname, int mode);
+
+open
+
+Description: Opens a file and returns a file descriptor.
+Usage: Used to open files for reading, writing, or both.
+Prototype: int open(const char *pathname, int flags, ...);
+
+read
+
+Description: Reads data from a file descriptor.
+Usage: Reads data from files or input streams.
+Prototype: ssize_t read(int fd, void *buf, size_t count);
+
+close
+
+Description: Closes a file descriptor.
+Usage: Frees resources associated with the file descriptor.
+Prototype: int close(int fd);
+
+fork
+
+Description: Creates a new process by duplicating the calling process.
+Usage: Used to create child processes.
+Prototype: pid_t fork(void);
+
+wait, waitpid, wait3, wait4
+
+Description: Wait for process termination.
+Usage: Used by a parent process to wait for its children to terminate.
+Prototypes:
+pid_t wait(int *wstatus);
+pid_t waitpid(pid_t pid, int *wstatus, int options);
+pid_t wait3(int *wstatus, int options, struct rusage *rusage);
+pid_t wait4(pid_t pid, int *wstatus, int options, struct rusage *rusage);
+signal, sigaction, sigemptyset, sigaddset
+
+Description: Signal handling.
+
+Usage: Used to set up handlers for signals (e.g., SIGINT).
+Prototypes:
+void (*signal(int signum, void (*handler)(int)))(int);
+int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact);
+int sigemptyset(sigset_t *set);
+int sigaddset(sigset_t *set, int signum);
+
+kill
+
+Description: Sends a signal to a process.
+Usage: Used to send signals to processes, often for termination.
+Prototype: int kill(pid_t pid, int sig);
+
+exit
+
+Description: Terminates the calling process.
+Usage: Ends a process, returning a status code.
+Prototype: void exit(int status);
+Directory and Environment Handling Functions
+
+getcwd
+
+Description: Gets the current working directory.
+Usage: Used to retrieve the current directory of the process.
+Prototype: char *getcwd(char *buf, size_t size);
+
+chdir
+
+Description: Changes the current working directory.
+Usage: Used to change the working directory of the process.
+Prototype: int chdir(const char *path);
+
+stat, lstat, fstat
+
+Description: Get file status.
+Usage: Used to obtain information about files.
+Prototypes:
+int stat(const char *path, struct stat *buf);
+int lstat(const char *path, struct stat *buf);
+int fstat(int fd, struct stat *buf);
+
+unlink
+
+Description: Deletes a name from the filesystem.
+Usage: Used to delete files.
+Prototype: int unlink(const char *pathname);
+
+execve
+
+Description: Executes a program.
+Usage: Replaces the current process image with a new one.
+Prototype: int execve(const char *pathname, char *const argv[], char *const envp[]);
+
+File Descriptor and Pipe Functions
+
+dup, dup2
+
+Description: Duplicates a file descriptor.
+Usage: Creates copies of file descriptors.
+Prototypes:
+int dup(int oldfd);
+int dup2(int oldfd, int newfd);
+
+pipe
+
+Description: Creates a pipe (pair of file descriptors).
+Usage: Used for inter-process communication.
+Prototype: int pipe(int pipefd[2]);
+
+
+Directory Functions
+
+opendir, readdir, closedir
+
+Description: Directory stream handling.
+Usage: Used for reading directory contents.
+Prototypes:
+DIR *opendir(const char *name);
+struct dirent *readdir(DIR *dirp);
+int closedir(DIR *dirp);
+
+
+Error Handling Functions
+
+strerror
+
+Description: Returns a string describing an error code.
+Usage: Provides human-readable error messages.
+Prototype: char *strerror(int errnum);
+
+perror
+
+Description: Prints a descriptive error message to standard error.
+Usage: Used to print error messages related to system call failures.
+Prototype: void perror(const char *s);
+
+
+Terminal and Environment Functions
+
+isatty
+
+Description: Tests whether a file descriptor refers to a terminal.
+Usage: Used to check if the input/output is from/to a terminal.
+Prototype: int isatty(int fd);
+
+ttyname
+
+Description: Returns the name of the terminal.
+Usage: Retrieves the terminal device name associated with a file descriptor.
+Prototype: char *ttyname(int fd);
+
+ttyslot
+
+Description: Returns the index of the current terminal.
+Usage: Retrieves the slot number of the current terminal.
+Prototype: int ttyslot(void);
+
+ioctl
+
+Description: Performs an I/O control operation on a file descriptor.
+Usage: Used for device-specific input/output operations.
+Prototype: int ioctl(int fd, unsigned long request, ...);
+
+getenv
+
+Description: Retrieves the value of an environment variable.
+Usage: Used to get environment variables.
+Prototype: char *getenv(const char *name);
+
+
+Terminal Control Functions
+
+tcsetattr, tcgetattr
+
+Description: Sets/gets the parameters associated with the terminal.
+Usage: Used to configure terminal I/O settings.
+Prototypes:
+int tcsetattr(int fd, int optional_actions, const struct termios *termios_p);
+int tcgetattr(int fd, struct termios *termios_p);
+
+
+Termcap Functions
+
+tgetent, tgetflag, tgetnum, tgetstr, tgoto, tputs
+
+Description: Terminal capability functions used to query and control terminal capabilities.
+Usage: Used for low-level terminal handling.
+Prototypes:
+int tgetent(char *bp, const char *name);
+int tgetflag(const char *id);
+int tgetnum(const char *id);
+char *tgetstr(const char *id, char **area);
+char *tgoto(const char *cap, int col, int row);
+int tputs(const char *str, int affcnt, int (*putc)(int));
+These functions collectively provide the capabilities needed to create a sophisticated shell, allowing for input handling, process control, file management, signal handling, and terminal manipulation.
+
+
+
+
+
+
+
+
