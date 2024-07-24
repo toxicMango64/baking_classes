@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:21:17 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/12 15:38:59 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:51:22 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	char h[] = "this is a sentence";
-// 	char n[] = "is";
-// 	size_t i = 7;
-// 	printf("%s\n", ft_strnstr(h, n, i));
-// }

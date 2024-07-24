@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:21:35 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/21 18:11:12 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:29:05 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str[i++] = s1[lead++];
 	str[i] = 0;
 	return (str);
-}
-int main()
-{
-	char s1[] = "lololololpostlolololo";
-	char set[] = "lo";
-	printf("%s\n", ft_strtrim(s1, set));
 }

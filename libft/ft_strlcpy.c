@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:20:19 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/12 16:14:36 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:46:01 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (x);
 }
-// int main()
-// {
-// 	char src[] = "Saad";
-// 	char dest [50];
-// 	printf("%zu  %s\n", ft_strlcpy(dest, src, 4), dest);
-// }

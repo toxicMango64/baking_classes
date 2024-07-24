@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:19:27 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/12 16:16:11 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:11:52 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
-
-// int main()
-// {
-// 	printf("%s\n", ft_strchr("Saadtaridq", 'd'));
-// }

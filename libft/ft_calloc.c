@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:31:13 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/02/22 20:03:38 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 22:46:05 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(str, count * size);
 	return (str);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// int main()
-// {
-// 	size_t count = 4;
-// 	size_t size = 4;
-// 	int *arr = ft_calloc(count, size);
-// 	size_t i = 0;
-// 	while (i < count)
-// 	{
-// 		printf("%d ", arr[i]);
-// 		i++;
-// 	}
-// }

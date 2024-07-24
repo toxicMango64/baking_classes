@@ -41,8 +41,8 @@ int	main(int ac, char **av)
 	if (1 < ac)
 		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); /* minishell does not take args */
 	// sa.sa_handler = setup_signal_handlers; /* will handle every signal DO NOT DELETE */
-	// sigaction(SIGINT, &sa, NULL);
-	// sa.sa_flags = SA_RESTART;
+	sigaction(SIGINT, &sa, NULL);
+	sa.sa_flags = SA_RESTART;
 	while (1)
 	{
 		user_input = readline("minishell-v1$ ");

@@ -6,7 +6,7 @@
 
 #define BUFFER_SIZE 42
 
-void execute_pwd() 
+void execute_pwd()
 {
     char buffer[BUFFER_SIZE];
     if (getcwd(buffer, sizeof(buffer)) != NULL)
@@ -23,25 +23,25 @@ void parse_pwd(char *command)
         printf("I dont know the recipe: %s\n", command);
 }
 
-int main() 
-{
-    char *input;
+// int main()
+// {
+//     char *input;
 
-    while (1) 
-    {
+//     while (1)
+//     {
 
-        input = readline("baking_classes> ");
+//         input = readline("baking_classes> ");
 
-        if (input == NULL)
-            break;
-        if (strcmp(input, "exit") == 0) 
-        {
-            free(input);
-            break;
-        }
-        parse_pwd(input);
-        free(input);
-    }
-    return (0);
-}
+//         if (input == NULL)
+//             break;
+//         if (strcmp(input, "exit") == 0)
+//         {
+//             free(input);
+//             break;
+//         }
+//         parse_pwd(input);
+//         free(input);
+//     }
+//     return (0);
+// }
 

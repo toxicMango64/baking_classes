@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:19:13 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/21 14:52:37 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:47:04 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,3 @@ void	ft_putstr_fd(char *str, int fd)
 		i++;
 	}
 }
-
-// int main()
-// {
-// 	int fd = STDOUT_FILENO;
-// 	ft_putstr_fd("eggplant", fd);
-// }

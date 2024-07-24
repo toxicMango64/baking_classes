@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:21:47 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/02/22 20:08:19 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 22:45:08 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s + start);
 	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
-		return (free(str), NULL);
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
@@ -37,13 +37,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	str[j] = '\0';
-	// free(s);
 	return (str);
-}
-int main()
-{
-	char s[] = "the nice weather is nice";
-	unsigned int start = 3;
-	size_t len = 15;
-	printf("%s\n", ft_substr(s, start, len));
 }

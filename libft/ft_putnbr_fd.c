@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:19:08 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/21 15:01:23 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:47:08 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
-// int main()
-// {
-// 	int n = -999;
-// 	int fd = STDOUT_FILENO;
-// 	ft_putnbr_fd(n, fd);
-// }

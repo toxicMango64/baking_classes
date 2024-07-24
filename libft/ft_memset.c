@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:18:30 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/02/22 20:03:11 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 22:51:13 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		str[i] = (char )c;
+		str[i] = c;
 		i++;
 	}
 	return (str);
 }
-

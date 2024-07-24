@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:19:20 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/02/22 20:04:16 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 20:41:51 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,20 +97,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[j] = NULL;
 	return (memfree(split, j - 1));
-}
-
-
-int main()
-{
-	char str[] = "Hello, world! from Shaikha";
-	char c = ' ';
-	char **split = ft_split(str, c);
-	int i;
-	i = 0;
-
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
 }

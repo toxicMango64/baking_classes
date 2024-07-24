@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:22:22 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/12 16:14:57 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:13:29 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-// int main()
-// {
-// 	printf("%d\n", ft_toupper('s'));
-// }

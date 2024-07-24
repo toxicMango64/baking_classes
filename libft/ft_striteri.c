@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:19:55 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/02/22 20:04:01 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:15:15 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,37 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// void to_upper(unsigned int i, char *str)
-// {
-// 	*str = ft_toupper(*str);
-// }
-
-
-// int main()
-// {
-// 	char s[] = "sAad";
-// 	ft_striteri(s, to_upper);
-// 	printf("%s\n", s);
-// }

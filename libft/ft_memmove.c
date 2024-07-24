@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:18:22 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/01/12 17:28:05 by mualkhid         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:11:22 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,4 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	else
 		ft_memcpy(dest, sc, n);
 	return (dst);
-}
-int main()
-{
-	char s[] = "DABLYAT";
-	char *d = s - 1;
-	size_t n = 7;
-	ft_memmove(d, s, n);
-	printf("%s\n", d);
-	char s1[] = "DABLYAT";
-	char *d1 = s1 - 1;
-	memmove(d1, s1, n);
-	printf("%s\n", d1);
-
 }
