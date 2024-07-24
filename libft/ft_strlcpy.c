@@ -30,9 +30,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (x);
 }
-// int main()
-// {
-// 	char src[] = "Saad";
-// 	char dest [50];
-// 	printf("%zu  %s\n", ft_strlcpy(dest, src, 4), dest);
-// }
+

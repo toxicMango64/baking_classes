@@ -29,10 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-// 	char s1[] = "da potato is potato";
-// 	char s2[] = "da tomato is tomato";
-// 	size_t n = 6;
-// 	printf("%d\n", ft_memcmp(s1, s2, n));
-// }

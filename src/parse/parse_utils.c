@@ -1,4 +1,5 @@
 #include "../../inc/parse.h"
+#include "../../inc/minishell.h"
 
 int	ft_isspace(int c)
 {

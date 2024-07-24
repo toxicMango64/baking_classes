@@ -48,9 +48,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-int main()
-{
-	char s1[] = "lololololpostlolololo";
-	char set[] = "lo";
-	printf("%s\n", ft_strtrim(s1, set));
-}
+

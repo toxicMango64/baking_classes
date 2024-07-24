@@ -100,17 +100,4 @@ char	**ft_split(char const *s, char c)
 }
 
 
-int main()
-{
-	char str[] = "Hello, world! from Shaikha";
-	char c = ' ';
-	char **split = ft_split(str, c);
-	int i;
-	i = 0;
 
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-}

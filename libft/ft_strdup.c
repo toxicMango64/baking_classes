@@ -23,7 +23,4 @@ char	*ft_strdup(const char *s1)
 	return (s2);
 }
 
-int main()
-{
-	printf("%s\n", ft_strdup("tomato"));
-}
+

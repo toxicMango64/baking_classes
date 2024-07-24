@@ -31,11 +31,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dst);
 }
 
-// int main()
-// {
-// 	unsigned char s[] = "BLACK";
-// 	unsigned char *d = s + 2;
-// 	size_t n = 5;
-// 	printf("%s\n", ft_memcpy(d, s, n));
-
-// }

@@ -35,11 +35,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	char h[] = "this is a sentence";
-// 	char n[] = "is";
-// 	size_t i = 7;
-// 	printf("%s\n", ft_strnstr(h, n, i));
-// }

@@ -23,16 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-// int main()
-// {
-// 	char str[] = "Munia";
-// 	size_t n = 4;
-// 	size_t i;
-// 	i = 0;
-// 	ft_bzero(str, n);
-// 	while (i < 4)
-// 	{
-// 		printf("%c\n", str[i]);
-// 		i++;
-// 	}
-// }

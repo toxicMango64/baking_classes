@@ -40,10 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	// free(s);
 	return (str);
 }
-int main()
-{
-	char s[] = "the nice weather is nice";
-	unsigned int start = 3;
-	size_t len = 15;
-	printf("%s\n", ft_substr(s, start, len));
-}

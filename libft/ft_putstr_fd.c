@@ -23,9 +23,3 @@ void	ft_putstr_fd(char *str, int fd)
 		i++;
 	}
 }
-
-// int main()
-// {
-// 	int fd = STDOUT_FILENO;
-// 	ft_putstr_fd("eggplant", fd);
-// }

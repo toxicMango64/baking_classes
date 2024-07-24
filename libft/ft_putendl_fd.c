@@ -17,8 +17,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-// int main()
-// {
-// 	int fd = STDOUT_FILENO;
-// 	ft_putendl_fd("omlete", fd);
-// }

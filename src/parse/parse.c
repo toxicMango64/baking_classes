@@ -1,4 +1,6 @@
 #include "../../inc/parse.h"
+#include "../../inc/minishell.h"
+
 
 char	*trimcleanstring(char *str)
 {
