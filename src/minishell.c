@@ -33,27 +33,27 @@ void	setup_signal_handlers(void)
 int	main(int ac, char **av)
 {
 	char				*user_input;
-	// char				**command; /* will run the command */
-	char				*temp_cmd; /* temp char *temp_cmd */
+	char				**command;
 	struct sigaction	sa;
 
 	// if(ft_isdigit(3)) /* causes issues :SKULL: */
 	// 	printf("lift is working\n\n");
 	if (1 < ac)
 		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); /* minishell does not take args */
-	sa.sa_handler = setup_signal_handlers; /* will handle every signal DO NOT DELETE */
-	sigaction(SIGINT, &sa, NULL);
-	sa.sa_flags = SA_RESTART;
+	// sa.sa_handler = setup_signal_handlers; /* will handle every signal DO NOT DELETE */
+	// sigaction(SIGINT, &sa, NULL);
+	// sa.sa_flags = SA_RESTART;
 	while (1)
 	{
 		user_input = readline("minishell-v1$ ");
+		// user_input = "echo hello | echo he\'ll\'o";
 		if (!user_input)
 			return (perror("realine error"), 126);
 		printf ("\tuser_input: {%s}\n", user_input);
-		temp_cmd = parse(user_input);
-
-		printf ("\ttemp_cmd: {%s}\n", temp_cmd);
+		command = parse(user_input);
 		free (user_input);
 	}
 	return (0);
 }
+//ls -la libft | cat input.txt
+//cc -lreadline src/minishell.c src/parse/*.c -o minishell
