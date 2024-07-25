@@ -30,19 +30,92 @@ void	setup_signal_handlers(void)
 			(perror("\nsigaction"), exit(1));
 }
 
-int	main(int ac, char **av)
-{
-	char				*user_input;
-	char				**command;
-	struct sigaction	sa;
+// functions
+// void	lexer(char *input, t_token **tokens)
+// {
+// 	// tokenize input into individual tokens
+// 	// ...
+// }
 
-	// if(ft_isdigit(3)) /* causes issues :SKULL: */
-	// 	printf("lift is working\n\n");
-	if (1 < ac)
-		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); /* minishell does not take args */
-	// sa.sa_handler = setup_signal_handlers; /* will handle every signal DO NOT DELETE */
-	sigaction(SIGINT, &sa, NULL);
-	sa.sa_flags = SA_RESTART;
+// void	parser(t_token *tokens, t_command **commands)
+// {
+// 	/* parse tokens into a list of commands */
+// 	/* ... */
+// }
+
+void print_tokens(t_token *tokens)
+{
+    while (tokens != NULL)
+    {
+        printf("Token: {%s}, Type: {%d}\n", tokens->value, tokens->type);
+        tokens = tokens->next;
+    }
+}
+
+int	interactive_mode(t_minishell *shell)
+{
+	char		*user_input;
+	// char		**command; /* will run the command */
+	char		*temp_cmd; /* temp char *temp_cmd */
+	t_token		*tokens;
+	t_command	*commands;
+	t_command	*cmd;
+
+	while (1)
+	{
+		user_input = readline("minishell-v1$ ");
+		if (!user_input)
+			return (perror("error while reading input"), 126);
+		printf ("\tuser_input: {%s}\n", user_input);
+		temp_cmd = parse(user_input);
+		lexer(user_input, &tokens);
+
+		print(user_input, &tokens);
+		
+		free (user_input);
+		// parser(tokens, &commands);
+		// cmd = commands;
+		// while (cmd)
+		// {
+		// 	execute_command(cmd, shell);
+		// 	cmd = cmd->next;
+		// }
+		// handle Ctrl-C, Ctrl-D, and Ctrl-'\'
+	}
+	return (0);
+}
+
+int	interactive_mode(t_minishell *shell)
+{
+	char		*user_input;
+	// char		**command; /* will run the command */
+	char		*temp_cmd; /* temp char *temp_cmd */
+	t_token		*tokens;
+	t_command	*commands;
+	t_command	*cmd;
+
+	while (1)
+	{
+		user_input = readline("minishell-v1$ ");
+		if (!user_input)
+			return (perror("error while reading input"), 126);
+		printf ("\tuser_input: {%s}\n", user_input);
+		temp_cmd = parse(user_input);
+		lexer(user_input, &tokens);
+
+		print(user_input, &tokens);
+		
+		free (user_input);
+		// parser(tokens, &commands);
+		// cmd = commands;
+		// while (cmd)
+		// {
+		// 	execute_command(cmd, shell);
+		// 	cmd = cmd->next;
+		// }
+		// handle Ctrl-C, Ctrl-D, and Ctrl-'\'
+	}
+
 	while (1)
 	{
 		user_input = readline("minishell-v1$ ");
@@ -53,7 +126,51 @@ int	main(int ac, char **av)
 		command = parse(user_input);
 		free (user_input);
 	}
+
+	return (0);
+}
+
+int	main(int ac, char **av)
+{
+	t_minishell			shell;
+	// struct sigaction	sa;
+
+	if (1 < ac)
+		return (printf("%s: %s: is a file or a directory", av[0], av[1]), 126); /* minishell does not take args */
+
+	// sa.sa_handler = setup_signal_handlers; /* will handle every signal DO NOT DELETE */
+	// sigaction(SIGINT, &sa, NULL);
+	// sa.sa_flags = SA_RESTART;
+
+	shell.env = get_env(); /* initialize environment variables */
+	shell.pwd = getcwd(NULL, 0); /* initialize current working directory */
+	shell.history = NULL; /* initialize history */
+	shell.commands = NULL; /* initialize commands */
+
+	if (interactive_mode(&shell))
+		return (printf ("vegy sed!"), 126); /* returns a random value does not have a meaning */
+
 	return (0);
 }
 //ls -la libft | cat input.txt
 //cc -lreadline src/minishell.c src/parse/*.c -o minishell
+
+/**
+ * qoutes or not (double and single)
+ * expansion $ ($PATH $HOME) get it from env
+ * 
+*/
+
+/**
+ * command
+ * flags
+ * piped or not
+*/
+
+/**
+ * $ " ' ! < >
+ * << (heredoc)
+ * >> < > redirections
+ *
+ * "   '$HOME' "
+*/
