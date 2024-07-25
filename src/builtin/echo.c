@@ -1,6 +1,5 @@
 #include "../inc/minishell.h"
 
-
 /*
 *	Checks whether an arg is an -n option flag.
 *	Returns 1 if the arg is at least -n , returns 0 if it is smth else but -n -nn -nnn
