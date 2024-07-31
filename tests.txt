@@ -1,0 +1,150 @@
+https://pastebin.com/raw/9XmkbNAj
+
+
+Basic Redirections
+
+Output Redirection:
+echo "Hello, World!" > output.txt
+cat output.txt
+
+Input Redirection:
+cat < output.txt
+
+Append Output Redirection:
+echo "This is appended text." >> output.txt
+cat output.txt
+
+Error Redirection:
+ls non_existing_file 2> error.txt
+cat error.txt
+
+Combined Output and Error Redirection:
+ls non_existing_file > combined.txt 2>&1
+cat combined.txt
+
+Pipes
+
+Simple Pipe:
+echo "Hello, World!" | tr '[:lower:]' '[:upper:]'
+
+Multiple Pipes:
+echo "Hello, World!" | tr '[:lower:]' '[:upper:]' | rev
+
+Pipe with Input Redirection:
+cat < output.txt | tr '[:lower:]' '[:upper:]'
+
+Pipe with Output Redirection:
+echo "Hello, World!" | tr '[:lower:]' '[:upper:]' > upper.txt
+cat upper.txt
+
+Combination of Pipes and Redirections
+
+Pipe with Output Redirection to File:
+echo "Hello, World!" | tr '[:lower:]' '[:upper:]' | rev > reversed.txt
+cat reversed.txt
+
+Pipe with Error Redirection:
+ls non_existing_file | tr '[:lower:]' '[:upper:]' 2> pipe_error.txt
+cat pipe_error.txt
+
+Pipe with Both Standard and Error Output Redirection:
+ls non_existing_file | tr '[:lower:]' '[:upper:]' > pipe_output.txt 2> pipe_error.txt
+cat pipe_output.txt
+cat pipe_error.txt
+
+Advanced Scenarios
+
+Pipes with Multiple Commands:
+echo "one two three four five" | awk '{print $3, $1, $5}' | tr '[:lower:]' '[:upper:]'
+
+Redirection with Background Process:
+sleep 5 && echo "Done sleeping" > sleep_output.txt &
+cat sleep_output.txt
+
+Echo and Pipe to tr:
+echo "hello world" | tr 'a-z' 'A-Z'
+This command converts all lowercase letters to uppercase.
+
+List Files and Pipe to grep:
+ls | grep "txt"
+This command lists all files and filters those containing "txt".
+
+Echo and Pipe to wc (word count):
+echo "one two three" | wc -w
+This command counts the number of words.
+
+Pipe the Output of cat to sort:
+cat file.txt | sort
+This command sorts the lines in file.txt.
+
+Pipe the Output of ps to grep:
+ps aux | grep "bash"
+This command lists all processes and filters those containing "bash".
+
+Use echo and Pipe to rev:
+echo "hello" | rev
+This command reverses the string "hello".
+
+Pipe the Output of ls to head:
+ls | head -n 5
+This command lists the first 5 files/directories in the current directory.
+
+Pipe the Output of echo to cut:
+echo "apple,banana,orange" | cut -d ',' -f 2
+This command extracts the second field (banana) when the delimiter is a comma.
+
+
+Redirections and &&
+
+echo "hello world" > output.txt && cat output.txt
+
+ls > files.txt && cat files.txt
+
+echo "hello world" > output.txt && echo "goodbye world" >> output.txt && cat output.txt
+
+ls non_existing_file 2> error.txt && cat error.txt
+
+ls non_existing_file > combined.txt 2>&1 && cat combined.txt
+
+touch newfile.txt && echo "This is a new file" > newfile.txt && cat newfile.txt
+
+ps > processes.txt && wc -l < processes.txt
+
+echo "temporary file" > temp.txt && rm temp.txt && echo "File removed"
+
+
+Using || with Pipes
+
+cat non_existing_file | grep "pattern" || echo "File not found or pattern not matched"
+
+ls | grep "non_existing_pattern" || echo "Pattern not found in directory listing"
+
+echo "hello" | grep "world" || echo "Pattern not found" | wc -w
+
+Using || with Redirections
+
+echo "hello world" > output.txt || echo "Failed to write to file"
+
+ls non_existing_file 2> error.txt || echo "Error occurred, see error.txt"
+
+cat non_existing_file > output.txt || echo "Failed to read file" > output.txt
+
+
+Combination of Pipes and Redirections with ||
+
+cat file.txt | grep "pattern" || echo "Pattern not found" > error.txt
+
+echo "hello" | grep "world" || echo "Pattern not found" > output.txt
+
+cat file.txt | grep "pattern" || echo "Pattern not found" >> error_log.txt
+
+ls non_existing_dir || echo "Directory not found" > dir_error.txt
+
+echo "test" | grep "no_match" || echo "Pattern not found" >> log.txt
+
+
+
+
+
+
+
