@@ -1,0 +1,3 @@
+5-8-2024 
+
+i edited execlp.c, Redirections.c and added some things to minishell.h everything works well (there is an issue when i use && or || and cat together it doesnt work )

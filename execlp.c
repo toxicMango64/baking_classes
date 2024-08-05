@@ -30,18 +30,12 @@ int	main(void)
 
 
 */
-
+#include "minishell.h"
 
 void	my_execlp(const char *file, char *const argv[])
 {
 	pid_t	pid;
-	char	*path;
-	char	*path_dup;
-	char	*dir;
-	char 	full_path[1024];
- 	int		dir_len;
-	int		file_len;
-	int status;
+	int		status;
 
 	pid = fork();
 	if (pid == -1)
@@ -50,49 +44,66 @@ void	my_execlp(const char *file, char *const argv[])
 		exit(EXIT_FAILURE);
 	}
 	else if (pid == 0)
-	{
-		execve(file, argv, environ);
-		if (errno == ENOENT)
-		{
-			path = getenv("PATH");
-			if (path)
-			{
-				path_dup = strdup(path);
-				dir = strtok(path_dup, ":");
-				while (dir)
-				{
-					dir_len = strlen(dir);
-					file_len = strlen(file);
-					if (dir_len + 1 + file_len + 1 <= 1024)
-					{
-						memcpy(full_path, dir, dir_len);
-						full_path[dir_len] = '/';
-						memcpy(full_path + dir_len + 1, file, file_len);
-						full_path[dir_len + 1 + file_len] = '\0';
-						execve(full_path, argv, environ);
-					}
-					dir = strtok(NULL, ":");
-				}
-				free(path_dup);
-			}
-		}
-		perror("execve");
-		exit(EXIT_FAILURE);
-	}
+		execute_command(file, argv);
 	else
 		waitpid(pid, &status, 0);
 }
 
-void	execute_execlp(const char *command)
+void	execute_command(const char *file, char *const argv[])
 {
-	char	*argv[] = {"/bin/sh", "-c", (char *)command, NULL};
-
-	my_execlp("/bin/sh", argv);
+	execve(file, argv, environ);
+	if (errno == ENOENT)
+		try_exec_in_path(file, argv);
+	perror("execve");
+	exit(EXIT_FAILURE);
 }
 
-int	main(void)
+void	try_exec_in_path(const char *file, char *const argv[])
 {
-	execute_execlp("ls -l");
-	execlp("ls", "ls", "-l", NULL);
-	return (0);
+	char	*path;
+
+	path = getenv("PATH");
+	char *path_dup, *dir, *full_path;
+	if (path)
+	{
+		path_dup = strdup(path);
+		dir = strtok(path_dup, ":");
+		while (dir)
+		{
+			full_path = construct_full_path(dir, file);
+			if (full_path)
+			{
+				execve(full_path, argv, environ);
+				free(full_path);
+			}
+			dir = strtok(NULL, ":");
+		}
+		free(path_dup);
+	}
+}
+
+char	*construct_full_path(const char *dir, const char *file)
+{
+	int		dir_len;
+	int		file_len;
+	char	*full_path;
+
+	dir_len = strlen(dir);
+	file_len = strlen(file);
+	if (dir_len + 1 + file_len + 1 > 1024)
+		return (NULL);
+	full_path = malloc(dir_len + 1 + file_len + 1);
+	if (!full_path)
+		return (NULL);
+	memcpy(full_path, dir, dir_len);
+	full_path[dir_len] = '/';
+	memcpy(full_path + dir_len + 1, file, file_len);
+	full_path[dir_len + 1 + file_len] = '\0';
+	return (full_path);
+}
+
+void	execute_execlp(const char *command)
+{
+	char *const argv[] = {"/bin/sh", "sh", "-c", (char *)command, NULL};
+	my_execlp("/bin/sh", argv);
 }
